@@ -3,7 +3,7 @@ import { FilesController } from '../controller'
 export const routes: Array<IRouter> = [
   {
     route: '/upload-file',
-    method: 'GET',
+    method: 'POST',
     execute: new FilesController().uploadFile,
   },
 ]
