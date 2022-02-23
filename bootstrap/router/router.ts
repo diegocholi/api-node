@@ -1,18 +1,18 @@
 import { Request, Response, NextFunction } from 'express'
-import { api } from '../../src/start'
+import { api } from '../bootstrap'
 import middleware from '../../src/middleware/middlewares'
 
 export interface IRouter {
   route: string
-  method: string
-  execute: (req?: Request, res?: Response) => void
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE'
+  execute: (req: Request, res: Response) => void
   executeMiddleware?: boolean
 }
 
 const router = (
   route: string,
   method: string,
-  execute: (req?: Request, res?: Response) => void,
+  execute: (req: Request, res: Response) => void,
   executeMiddleware: boolean = false
 ) => {
   executeMiddleware
@@ -25,10 +25,12 @@ const router = (
           async (req: Request, res: Response, next: NextFunction) => {
             try {
               await execute(req, res)
-              // Váriaveis não utilizadas
-              next
             } catch (err) {
-              res.status(400).send({ error: err })
+              next(err)
+              res.status(400).send({
+                status: 'BAD_REQUEST',
+                error: err,
+              })
             }
           }
         )
@@ -38,10 +40,12 @@ const router = (
           async (req: Request, res: Response, next: NextFunction) => {
             try {
               await execute(req, res)
-              // Váriaveis não utilizadas
-              next
             } catch (err) {
-              res.status(400).send({ error: err })
+              next(err)
+              res.status(400).send({
+                status: 'BAD_REQUEST',
+                error: err,
+              })
             }
           }
         )
@@ -54,10 +58,12 @@ const router = (
           async (req: Request, res: Response, next: NextFunction) => {
             try {
               await execute(req, res)
-              // Váriaveis não utilizadas
-              next
             } catch (err) {
-              res.status(400).send({ error: err })
+              next(err)
+              res.status(400).send({
+                status: 'BAD_REQUEST',
+                error: err,
+              })
             }
           }
         )
@@ -67,10 +73,12 @@ const router = (
           async (req: Request, res: Response, next: NextFunction) => {
             try {
               await execute(req, res)
-              // Váriaveis não utilizadas
-              next
             } catch (err) {
-              res.status(400).send({ error: err })
+              next(err)
+              res.status(400).send({
+                status: 'BAD_REQUEST',
+                error: err,
+              })
             }
           }
         )
@@ -83,10 +91,12 @@ const router = (
           async (req: Request, res: Response, next: NextFunction) => {
             try {
               await execute(req, res)
-              // Váriaveis não utilizadas
-              next
             } catch (err) {
-              res.status(400).send({ error: err })
+              next(err)
+              res.status(400).send({
+                status: 'BAD_REQUEST',
+                error: err,
+              })
             }
           }
         )
@@ -96,10 +106,12 @@ const router = (
           async (req: Request, res: Response, next: NextFunction) => {
             try {
               await execute(req, res)
-              // Váriaveis não utilizadas
-              next
             } catch (err) {
-              res.status(400).send({ error: err })
+              next(err)
+              res.status(400).send({
+                status: 'BAD_REQUEST',
+                error: err,
+              })
             }
           }
         )
@@ -112,10 +124,12 @@ const router = (
           async (req: Request, res: Response, next: NextFunction) => {
             try {
               await execute(req, res)
-              // Váriaveis não utilizadas
-              next
             } catch (err) {
-              res.status(400).send({ error: err })
+              next(err)
+              res.status(400).send({
+                status: 'BAD_REQUEST',
+                error: err,
+              })
             }
           }
         )
@@ -125,10 +139,12 @@ const router = (
           async (req: Request, res: Response, next: NextFunction) => {
             try {
               await execute(req, res)
-              // Váriaveis não utilizadas
-              next
             } catch (err) {
-              res.status(400).send({ error: err })
+              next(err)
+              res.status(400).send({
+                status: 'BAD_REQUEST',
+                error: err,
+              })
             }
           }
         )

@@ -1,4 +1,5 @@
-function middlewares(req: any, res: any, next: any) {
+import { Request, Response, NextFunction } from 'express'
+function middlewares(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers['authorization']
 
   if (!authHeader) return res.status(401).send({ error: 'Token inválido' })

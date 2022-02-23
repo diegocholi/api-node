@@ -1,2 +1,2 @@
-import { startApilication } from './src/start'
-startApilication()
+import { bootstrap } from './bootstrap/bootstrap'
+bootstrap()
