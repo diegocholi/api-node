@@ -28,10 +28,6 @@ export const bootstrap = () => {
     bodyParser.urlencoded({ extended: false }),
   ])
 
-  // Definindo diretório de arquivos estáticos
-  api.use(middlewares) // Definição de de um middlewares para arquivos estáticos
-  api.use('/storage', express.static(path.resolve() + '/storage'))
-
   // Criando pasta do repositório de arquivos caso ela não exista
   if (!fs.existsSync('storage')) fs.mkdirSync('storage')
 
@@ -40,4 +36,8 @@ export const bootstrap = () => {
 
   // Iniciando Core
   core()
+  
+  // Definindo diretório de arquivos estáticos
+  api.use(middlewares) // Definição de de um middlewares para arquivos estáticos
+  api.use('/storage', express.static(path.resolve() + '/storage'))
 }
