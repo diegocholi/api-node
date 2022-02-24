@@ -8,12 +8,11 @@ class FilesController {
     try {
       // Verificando se o arquivo existe
       if (!req.files) {
-        res.status(400).send({
+        return res.status(400).send({
           status: 'BAD_REQUEST',
           message: 'Arquivo não encontrado!',
           error: 'File not found!',
         })
-        return
       }
 
       // Verificação e criação de pastas e contextos de aplicações que utilizarão o MS
@@ -55,12 +54,12 @@ class FilesController {
         }
       }
 
-      res.status(200).send({
+      return res.status(200).send({
         message: 'Files uploaded',
         filesInfo: filesResponse,
       })
     } catch (err) {
-      res.status(400).send({
+      return res.status(400).send({
         status: 'BAD_REQUEST',
         message: 'Erro inesperado ao subir o arquivo',
         error: err,
@@ -95,11 +94,11 @@ class FilesController {
       if (!fs.existsSync(newPath)) fs.mkdirSync(newPath)
       fs.renameSync(oldPath, newPath + idFile)
 
-      res.status(200).send({
+      return res.status(200).send({
         message: 'Deleted File',
       })
     } catch (err) {
-      res.status(404).send({
+      return res.status(404).send({
         status: 'BAD_REQUEST',
         message: 'Erro, arquivo não encontrado.',
       })
