@@ -6,6 +6,11 @@
 ```
 npm install -D nodemon
 ```
+#### Nos scripts do package.json adicionar o script de dev
+```
+"dev": "ts-node-dev index.ts"
+```
+
 
 ### Gerenciador de arquivos automatic Type Script
 
