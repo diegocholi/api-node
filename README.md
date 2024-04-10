@@ -2,7 +2,7 @@
 
 ## Preparação de ambiente
 
-### Paracote para desenvolvimento
+### Pacote para desenvolvimento
 ```
 npm install -D nodemon
 ```
