@@ -2,18 +2,9 @@
 
 ## Preparação de ambiente
 
-### Paracote para compilação automática no servidor npm
-
+### Paracote para desenvolvimento
 ```
-npm i sucrase
-```
-
-```
-npm install -g nodemon
-```
-
-```
-npm install --save-dev nodemon
+npm install -D nodemon
 ```
 
 ### Gerenciador de arquivos automatic Type Script
