@@ -11,7 +11,6 @@ npm install -D nodemon
 "dev": "ts-node-dev index.ts"
 ```
 
-
 ### Gerenciador de arquivos automatic Type Script
 
 ```
